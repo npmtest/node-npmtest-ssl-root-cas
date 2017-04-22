@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-ssl-root-cas",     "homepage": "https://github.com/npmtest/node-npmtest-ssl-root-cas",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-ssl-root-cas.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [ssl-root-cas (v1.2.3)](https://github.com/coolaj86/node-ssl-root-cas)  [![npm package](https://img.shields.io/npm/v/npmtest-ssl-root-cas.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-ssl-root-cas) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-ssl-root-cas.svg)](https://travis-ci.org/npmtest/node-npmtest-ssl-root-cas)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-ssl-root-cas",
+    "keywords": [
+        "coverage",
+        "test",
+        "ssl-root-cas"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_ssl_root_cas.js",
+    "name": "npmtest-ssl-root-cas",
+    "nameAlias": "npmtest_ssl_root_cas",
+    "nameOriginal": "npmtest-ssl-root-cas",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-ssl-root-cas.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
